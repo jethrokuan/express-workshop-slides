@@ -1,0 +1,289 @@
+#+EXPORT_EXCLUDE_TAGS:  noexport
+#+AUTHOR:               NUS Hackers
+#+TITLE: Web Dev with Node.js
+#+LANGUAGE:             en
+#+OPTIONS:              toc:nil
+#+OPTIONS:              reveal_center:t reveal_progress:t reveal_history:t reveal_control:nil
+#+OPTIONS:              reveal_mathjax:nil reveal_rolling_links:nil reveal_keyboard:t reveal_overview:t num:nil reveal_single_file:t
+#+REVEAL_HLEVEL:        1
+#+REVEAL_MARGIN:        0.0
+#+REVEAL_MIN_SCALE:     1.0
+#+REVEAL_MAX_SCALE:     1.4
+#+REVEAL_TRANS:         fade
+#+REVEAL_SPEED:         fast
+#+REVEAL_THEME:         white
+#+REVEAL_ROOT:          file:///home/jethro/Dropbox/org/Talks/reveal.js/
+#+REVEAL_PLUGINS: (markdown notes)
+
+* Hello!
+While waiting, please install:
+1. Sublime Text 3
+2. Google Chrome
+3. Node.js
+4. MongoDB
+* Prerequisites
+1. HTML/CSS
+2. Good to have:
+   - Programming experience
+   - Javascript experience
+* Let's make sure everything is running
+#+BEGIN_SRC bash
+  node -v #v7.3.0
+  npm -v #v4.1.1
+
+  mkdir ~/mongo_data
+  mongod --dbpath ~/mongo_data
+
+  # ...
+  # ... [initandlisten] waiting for connections on port 27017
+#+END_SRC
+* Javascript: A Recap
+Start a node REPL in terminal via =node=.
+** Variables and Primitives
+#+BEGIN_SRC javascript
+  var x = 5;
+  var str = "A string";
+  var a_bool = true;
+  var nothing = null;
+#+END_SRC
+** Arrays
+#+BEGIN_SRC javascript
+  var arr = ["a", "b", "c", "d"];
+
+  for (var i in arr) {
+    console.log(arr[i]);
+  }
+#+END_SRC
+** Objects
+#+BEGIN_SRC javascript
+  obj var = {
+    "king": "joffrey",
+    "queen": "margaery",
+    "a": {
+      "b": "ab!!"
+    }
+  }
+
+  obj["king"];    //"joffrey"
+  obj["a"]["b"];  //"ab!"
+#+END_SRC
+** If-Else
+#+BEGIN_SRC javascript
+  if (1 === 2) {
+    console.log("1 is equal to 2"); 
+  } else {
+    console.log("1 is not equal to 2");
+  }
+#+END_SRC
+** Functions
+#+BEGIN_SRC javascript
+  function add(p1, p2) {
+    return p1 + p2;
+  }
+
+  add(1,2) //returns 3
+#+END_SRC
+** Javascript is Functional!
+*** Functions as values
+#+BEGIN_SRC javascript
+  function logit() {
+    console.log("Log this thing");
+  }
+
+  $("#btn_1").click(logit);
+#+END_SRC
+*** Higher-order functions
+#+BEGIN_SRC javascript
+  function add(p1, p2) {
+    return p1, p2;
+  }
+
+  add(1,2); // 3
+
+  function makeSum(n) {
+    return function(p) {
+      return add(n,p);
+    }
+  }
+
+  var sum1 = makeSum(1);
+
+  sum1(2) // 3
+#+END_SRC
+*** Callback functions
+#+BEGIN_SRC javascript
+  function logResult(result) {
+    console.log("The result is " + result);
+  }
+
+  function sumThenLog(p1, p2 , callback) {
+    var result = p1 + p2;
+    callback(result);
+  }
+#+END_SRC
+* An Introduction to Node.js
+** Node.js is Javascript on the Server
+ - Runs on the V8 engine
+ - Unlike browser Javascript (client)
+   - Access to FS
+   - etc. etc.
+ - But code looks similar; don't mix them up!
+*** Understanding Node.js
+ #+ATTR_HTML: :width 50% :height 50%
+ [[file:images/eventloop.jpg]]
+*** Hackathons ♥ Node
+ - Huge ecosystem (too huge?)
+   - If you're writing something really complex, there's probably already a library online for that
+ - Javascript everywhere!
+ - 0 to 100 quickly
+ - skip the boilerplate, focus on core functionality
+*** Hackathon Starter Kits are a thing
+ - https://github.com/sahat/hackathon-starter
+ - has a great README which might be useful, go check it out!
+*** But they're so complex!
+ - Routing?
+ - Templating?
+ - Authentication?
+ - MVC framework?
+ - ES6 Syntax? Transpilers?
+*** Back to basics for us...
+ - To facilitate learning only
+ - Gradual introduction of libraries
+ - Once you're familiar with the libraries, feel free to use the starter template
+* HTTP
+#+ATTR_HTML: :width 50% :height 50%
+[[file:images/http.jpg]]
+* Building a blog app!
+Whiteboard time!
+
+Completed app located at https://github.com/jethrokuan/express-workshop
+
+* Creating your Express App
+** Generating the app
+*** Step 1: Install ~express-generator~
+ #+BEGIN_SRC bash
+   npm install express-generator -g
+ #+END_SRC
+
+NOTE: If you get a =EACCES permission denied=, you'll need to prepend =sudo= in front of the command.
+*** Step 2: create a new folder
+ #+BEGIN_SRC bash
+   mkdir hnr-blog
+ #+END_SRC
+*** Step 3: Generate express app!
+ #+BEGIN_SRC bash
+   cd hnr-blog
+   express --view=hbs . #we're using Handlebars
+ #+END_SRC
+** Folder Structure
+#+BEGIN_SRC text
+  .
+  ├── [4.0K]  "bin"/
+  ├── [4.0K]  "public"/
+  ├── [4.0K]  "routes"/
+  ├── [4.0K]  "views"/
+  ├── [1.2K]  "app.js"
+  └── [ 326]  "package.json"
+#+END_SRC
+* Recap
+** =package.json=
+1. Defines your project
+  - and its dependencies
+2. Contains your scripts, to be run with =npm=. e.g. =npm start=
+#+BEGIN_SRC json
+  {  
+    "scripts": {
+      "start": "node app.js"
+    }
+  }
+#+END_SRC
+** Basic Express App
+#+BEGIN_SRC javascript
+  // index.js
+
+  var express = require('express');
+  var app = express();
+
+  app.get('/', function(req, res) {
+    res.send('Hello World!');
+  })
+
+  app.listen(3000, function() {
+    console.log("example app listening on port 3000");
+  })
+#+END_SRC
+** HTTP Verbs
+#+BEGIN_SRC javascript
+  app.get('/', function(req, res) {...})
+
+  app.post('/', function(req, res) {
+    //req.body contains payload
+  })
+#+END_SRC
+** Routing
+#+BEGIN_SRC javascript
+  // routes/index.js
+  var router = express.Router();
+
+  router.get('/', function(req, res) {
+    res.send("something");
+  })
+
+  module.exports = router;
+
+
+  // app.js
+
+  var indexRoutes = require('./routes/index');
+  app.use('/somebasepath', indexRoutes);
+#+END_SRC
+** Templating
+#+BEGIN_SRC handlebars
+  {{#each items}}
+    <li>{{itemproperty}}</li>
+  {{/each}}
+#+END_SRC
+** Mongoose
+*** Step 1: Establish connection
+#+BEGIN_SRC javascript
+  var mongoose = require('mongoose');
+  mongoose.connect('mongodb://localhost:27017/dbname');
+#+END_SRC
+*** Step 2: Create Model
+#+BEGIN_SRC javascript
+  // ./models/Post.js
+  var mongoose = require('mongoose');
+  var Schema = mongoose.Schema;
+  var postSchema = new Schma({
+    title: String,
+    post: String
+  })
+
+  var Post = mongoose.model('Post', postSchema);
+
+  module.exports = Post;
+#+END_SRC
+*** Step 3: Use Model
+#+BEGIN_SRC javascript
+  var Post = require('./models/post');
+
+  var post = new Post({
+    title: "hello",
+    post "hello world"
+  });
+
+  post.save(function(err) {
+    if (err) throw err;
+    //...
+  });
+
+  Post.find({title: "hello"}, function(err, posts) {
+    if (err) throw err;
+    //...
+  })
+#+END_SRC
+* Next Steps
+1. Authentication (FB/Twitter/Google)
+2. Explore other databases (Postgres)
+* Goodluck for your hackathon!
+Full code found here: [[http://github.com/jethrokuan/express-workshop]]
