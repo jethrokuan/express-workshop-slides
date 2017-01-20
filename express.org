@@ -286,4 +286,3 @@ NOTE: If you get a =EACCES permission denied=, you'll need to prepend =sudo= in 
 1. Authentication (FB/Twitter/Google)
 2. Explore other databases (Postgres)
 * Goodluck for your hackathon!
-Full code found here: [[http://github.com/jethrokuan/express-workshop]]

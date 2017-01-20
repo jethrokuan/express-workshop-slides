@@ -1631,12 +1631,12 @@ body {
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Web Dev with Node.js</h1><h2 class="author">NUS Hackers</h2><p class="date">Created: 2017-01-20 Fri 14:45</p>
+<section id="sec-title-slide"><h1 class="title">Web Dev with Node.js</h1><h2 class="author">NUS Hackers</h2><p class="date">Created: 2017-01-20 Fri 14:50</p>
 </section>
 
 <section>
-<section id="slide-org302d09e">
-<h2 id="org302d09e">Hello!</h2>
+<section id="slide-org82f8d77">
+<h2 id="org82f8d77">Hello!</h2>
 <p>
 While waiting, please install:
 </p>
@@ -1650,8 +1650,8 @@ While waiting, please install:
 </section>
 </section>
 <section>
-<section id="slide-org46ccd56">
-<h2 id="org46ccd56">Prerequisites</h2>
+<section id="slide-orgd5ab38a">
+<h2 id="orgd5ab38a">Prerequisites</h2>
 <ol>
 <li>HTML/CSS</li>
 <li>Good to have:
@@ -1665,8 +1665,8 @@ While waiting, please install:
 </section>
 </section>
 <section>
-<section id="slide-orgd0a788c">
-<h2 id="orgd0a788c">Let's make sure everything is running</h2>
+<section id="slide-orgf16c0da">
+<h2 id="orgf16c0da">Let's make sure everything is running</h2>
 <div class="org-src-container">
 
 <pre  class="src src-bash">node -v <span style="color: #204A87;">#</span><span style="color: #204A87;">v7.3.0</span>
@@ -1682,14 +1682,14 @@ mongod --dbpath ~/mongo_data
 </section>
 </section>
 <section>
-<section id="slide-org2f43fd1">
-<h2 id="org2f43fd1">Javascript: A Recap</h2>
+<section id="slide-org5468c03">
+<h2 id="org5468c03">Javascript: A Recap</h2>
 <p>
 Start a node REPL in terminal via <code>node</code>.
 </p>
 </section>
-<section id="slide-org6e76ba4">
-<h3 id="org6e76ba4">Variables and Primitives</h3>
+<section id="slide-orgf03d15b">
+<h3 id="orgf03d15b">Variables and Primitives</h3>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #A52A2A; font-weight: bold;">var</span> <span style="color: #0084C8; font-weight: bold;">x</span> = 5;
@@ -1699,8 +1699,8 @@ Start a node REPL in terminal via <code>node</code>.
 </pre>
 </div>
 </section>
-<section id="slide-orgfa7fe0c">
-<h3 id="orgfa7fe0c">Arrays</h3>
+<section id="slide-org41c5081">
+<h3 id="org41c5081">Arrays</h3>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #A52A2A; font-weight: bold;">var</span> <span style="color: #0084C8; font-weight: bold;">arr</span> = [<span style="color: #4E9A06;">"a"</span>, <span style="color: #4E9A06;">"b"</span>, <span style="color: #4E9A06;">"c"</span>, <span style="color: #4E9A06;">"d"</span>];
@@ -1711,8 +1711,8 @@ Start a node REPL in terminal via <code>node</code>.
 </pre>
 </div>
 </section>
-<section id="slide-org150617a">
-<h3 id="org150617a">Objects</h3>
+<section id="slide-orgdf266dc">
+<h3 id="orgdf266dc">Objects</h3>
 <div class="org-src-container">
 
 <pre  class="src src-javascript">obj <span style="color: #A52A2A; font-weight: bold;">var</span> = {
@@ -1728,8 +1728,8 @@ obj[<span style="color: #4E9A06;">"a"</span>][<span style="color: #4E9A06;">"b"<
 </pre>
 </div>
 </section>
-<section id="slide-orgebe7961">
-<h3 id="orgebe7961">If-Else</h3>
+<section id="slide-orgbd3b4af">
+<h3 id="orgbd3b4af">If-Else</h3>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #A52A2A; font-weight: bold;">if</span> (1 === 2) {
@@ -1740,8 +1740,8 @@ obj[<span style="color: #4E9A06;">"a"</span>][<span style="color: #4E9A06;">"b"<
 </pre>
 </div>
 </section>
-<section id="slide-org4221b1e">
-<h3 id="org4221b1e">Functions</h3>
+<section id="slide-org2587a15">
+<h3 id="org2587a15">Functions</h3>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #A52A2A; font-weight: bold;">function</span> <span style="color: #00578E; font-weight: bold;">add</span>(<span style="color: #0084C8; font-weight: bold;">p1</span>, <span style="color: #0084C8; font-weight: bold;">p2</span>) {
@@ -1752,12 +1752,12 @@ add(1,2) <span style="color: #204A87;">//</span><span style="color: #204A87;">re
 </pre>
 </div>
 </section>
-<section id="slide-orgd392f69">
-<h3 id="orgd392f69">Javascript is Functional!</h3>
-<div class="outline-text-3" id="text-orgd392f69">
+<section id="slide-orgcab31ec">
+<h3 id="orgcab31ec">Javascript is Functional!</h3>
+<div class="outline-text-3" id="text-orgcab31ec">
 </div></section>
-<section id="slide-org89514f7">
-<h4 id="org89514f7">Functions as values</h4>
+<section id="slide-org774bc57">
+<h4 id="org774bc57">Functions as values</h4>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #A52A2A; font-weight: bold;">function</span> <span style="color: #00578E; font-weight: bold;">logit</span>() {
@@ -1768,8 +1768,8 @@ $(<span style="color: #4E9A06;">"#btn_1"</span>).click(logit);
 </pre>
 </div>
 </section>
-<section id="slide-orgd146918">
-<h4 id="orgd146918">Higher-order functions</h4>
+<section id="slide-org1e3d3a8">
+<h4 id="org1e3d3a8">Higher-order functions</h4>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #A52A2A; font-weight: bold;">function</span> <span style="color: #00578E; font-weight: bold;">add</span>(<span style="color: #0084C8; font-weight: bold;">p1</span>, <span style="color: #0084C8; font-weight: bold;">p2</span>) {
@@ -1790,8 +1790,8 @@ sum1(2) <span style="color: #204A87;">// </span><span style="color: #204A87;">3<
 </pre>
 </div>
 </section>
-<section id="slide-orgbae3ed6">
-<h4 id="orgbae3ed6">Callback functions</h4>
+<section id="slide-org5afb46d">
+<h4 id="org5afb46d">Callback functions</h4>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #A52A2A; font-weight: bold;">function</span> <span style="color: #00578E; font-weight: bold;">logResult</span>(<span style="color: #0084C8; font-weight: bold;">result</span>) {
@@ -1807,12 +1807,12 @@ sum1(2) <span style="color: #204A87;">// </span><span style="color: #204A87;">3<
 </section>
 </section>
 <section>
-<section id="slide-org6f32b28">
-<h2 id="org6f32b28">An Introduction to Node.js</h2>
-<div class="outline-text-2" id="text-org6f32b28">
+<section id="slide-org2bd470d">
+<h2 id="org2bd470d">An Introduction to Node.js</h2>
+<div class="outline-text-2" id="text-org2bd470d">
 </div></section>
-<section id="slide-org344db4e">
-<h3 id="org344db4e">Node.js is Javascript on the Server</h3>
+<section id="slide-org0f09a5a">
+<h3 id="org0f09a5a">Node.js is Javascript on the Server</h3>
 <ul>
 <li>Runs on the V8 engine</li>
 <li>Unlike browser Javascript (client)
@@ -1825,8 +1825,8 @@ sum1(2) <span style="color: #204A87;">// </span><span style="color: #204A87;">3<
 
 </ul>
 </section>
-<section id="slide-org52cc8ff">
-<h4 id="org52cc8ff">Understanding Node.js</h4>
+<section id="slide-orgd4ac417">
+<h4 id="orgd4ac417">Understanding Node.js</h4>
 
 <div class="figure">
 <p><img src="data:image/jpg;base64,/9j/4Q/MRXhpZgAATU0AKgAAAAgABwESAAMAAAABAAEAAAEaAAUAAAABAAAAYgEbAAUAAAABAAAA
@@ -4211,8 +4211,8 @@ V4K8FeCvBUrT2/8A/9k=" width="50%" height="50%" />
 </p>
 </div>
 </section>
-<section id="slide-org23b1c0a">
-<h4 id="org23b1c0a">Hackathons ♥ Node</h4>
+<section id="slide-org5f4624e">
+<h4 id="org5f4624e">Hackathons ♥ Node</h4>
 <ul>
 <li>Huge ecosystem (too huge?)
 <ul>
@@ -4225,16 +4225,16 @@ V4K8FeCvBUrT2/8A/9k=" width="50%" height="50%" />
 
 </ul>
 </section>
-<section id="slide-orgb02bd4d">
-<h4 id="orgb02bd4d">Hackathon Starter Kits are a thing</h4>
+<section id="slide-org8ed627d">
+<h4 id="org8ed627d">Hackathon Starter Kits are a thing</h4>
 <ul>
 <li><a href="https://github.com/sahat/hackathon-starter">https://github.com/sahat/hackathon-starter</a></li>
 <li>has a great README which might be useful, go check it out!</li>
 
 </ul>
 </section>
-<section id="slide-orgc93a7a1">
-<h4 id="orgc93a7a1">But they're so complex!</h4>
+<section id="slide-org3de0486">
+<h4 id="org3de0486">But they're so complex!</h4>
 <ul>
 <li>Routing?</li>
 <li>Templating?</li>
@@ -4244,8 +4244,8 @@ V4K8FeCvBUrT2/8A/9k=" width="50%" height="50%" />
 
 </ul>
 </section>
-<section id="slide-orge8c4210">
-<h4 id="orge8c4210">Back to basics for us&#x2026;</h4>
+<section id="slide-org564fd64">
+<h4 id="org564fd64">Back to basics for us&#x2026;</h4>
 <ul>
 <li>To facilitate learning only</li>
 <li>Gradual introduction of libraries</li>
@@ -4255,8 +4255,8 @@ V4K8FeCvBUrT2/8A/9k=" width="50%" height="50%" />
 </section>
 </section>
 <section>
-<section id="slide-orgd4af6c2">
-<h2 id="orgd4af6c2">HTTP</h2>
+<section id="slide-org9ad9abc">
+<h2 id="org9ad9abc">HTTP</h2>
 
 <div class="figure">
 <p><img src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYF
@@ -5487,8 +5487,8 @@ h3ztm8P6FvRodeKNAAD/ANGn/9k=" width="50%" height="50%" />
 </section>
 </section>
 <section>
-<section id="slide-orge81849a">
-<h2 id="orge81849a">Building a blog app!</h2>
+<section id="slide-org72c6cc6">
+<h2 id="org72c6cc6">Building a blog app!</h2>
 <p>
 Whiteboard time!
 </p>
@@ -5500,16 +5500,16 @@ Completed app located at <a href="https://github.com/jethrokuan/express-workshop
 </section>
 </section>
 <section>
-<section id="slide-org37ce986">
-<h2 id="org37ce986">Creating your Express App</h2>
-<div class="outline-text-2" id="text-org37ce986">
+<section id="slide-orgce3aa58">
+<h2 id="orgce3aa58">Creating your Express App</h2>
+<div class="outline-text-2" id="text-orgce3aa58">
 </div></section>
-<section id="slide-orgf0b5cbe">
-<h3 id="orgf0b5cbe">Generating the app</h3>
-<div class="outline-text-3" id="text-orgf0b5cbe">
+<section id="slide-org930b0e8">
+<h3 id="org930b0e8">Generating the app</h3>
+<div class="outline-text-3" id="text-org930b0e8">
 </div></section>
-<section id="slide-org15cd123">
-<h4 id="org15cd123">Step 1: Install <code>express-generator</code></h4>
+<section id="slide-orgc77b76a">
+<h4 id="orgc77b76a">Step 1: Install <code>express-generator</code></h4>
 <div class="org-src-container">
 
 <pre  class="src src-bash">npm install express-generator -g
@@ -5520,16 +5520,16 @@ Completed app located at <a href="https://github.com/jethrokuan/express-workshop
 NOTE: If you get a <code>EACCES permission denied</code>, you'll need to prepend <code>sudo</code> in front of the command.
 </p>
 </section>
-<section id="slide-org67ee4af">
-<h4 id="org67ee4af">Step 2: create a new folder</h4>
+<section id="slide-org02d71dc">
+<h4 id="org02d71dc">Step 2: create a new folder</h4>
 <div class="org-src-container">
 
 <pre  class="src src-bash">mkdir hnr-blog
 </pre>
 </div>
 </section>
-<section id="slide-orga7b4410">
-<h4 id="orga7b4410">Step 3: Generate express app!</h4>
+<section id="slide-org2cadc74">
+<h4 id="org2cadc74">Step 3: Generate express app!</h4>
 <div class="org-src-container">
 
 <pre  class="src src-bash"><span style="color: #A020F0;">cd</span> hnr-blog
@@ -5537,8 +5537,8 @@ express --view=hbs . <span style="color: #204A87;">#</span><span style="color: #
 </pre>
 </div>
 </section>
-<section id="slide-orga3991fa">
-<h3 id="orga3991fa">Folder Structure</h3>
+<section id="slide-org0db4271">
+<h3 id="org0db4271">Folder Structure</h3>
 <div class="org-src-container">
 
 <pre  class="src src-text">.
@@ -5553,12 +5553,12 @@ express --view=hbs . <span style="color: #204A87;">#</span><span style="color: #
 </section>
 </section>
 <section>
-<section id="slide-org6276aad">
-<h2 id="org6276aad">Recap</h2>
-<div class="outline-text-2" id="text-org6276aad">
+<section id="slide-org195f69d">
+<h2 id="org195f69d">Recap</h2>
+<div class="outline-text-2" id="text-org195f69d">
 </div></section>
-<section id="slide-org93a4ab8">
-<h3 id="org93a4ab8"><code>package.json</code></h3>
+<section id="slide-orgab1edbf">
+<h3 id="orgab1edbf"><code>package.json</code></h3>
 <ol>
 <li>Defines your project
 <ul>
@@ -5578,8 +5578,8 @@ express --view=hbs . <span style="color: #204A87;">#</span><span style="color: #
 </pre>
 </div>
 </section>
-<section id="slide-orgbf6a564">
-<h3 id="orgbf6a564">Basic Express App</h3>
+<section id="slide-org9207d48">
+<h3 id="org9207d48">Basic Express App</h3>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #204A87;">// </span><span style="color: #204A87;">index.js</span>
@@ -5597,8 +5597,8 @@ app.listen(3000, <span style="color: #A52A2A; font-weight: bold;">function</span
 </pre>
 </div>
 </section>
-<section id="slide-orgd7d4515">
-<h3 id="orgd7d4515">HTTP Verbs</h3>
+<section id="slide-org36529be">
+<h3 id="org36529be">HTTP Verbs</h3>
 <div class="org-src-container">
 
 <pre  class="src src-javascript">app.get(<span style="color: #4E9A06;">'/'</span>, <span style="color: #A52A2A; font-weight: bold;">function</span>(<span style="color: #0084C8; font-weight: bold;">req</span>, <span style="color: #0084C8; font-weight: bold;">res</span>) {...})
@@ -5609,8 +5609,8 @@ app.post(<span style="color: #4E9A06;">'/'</span>, <span style="color: #A52A2A; 
 </pre>
 </div>
 </section>
-<section id="slide-org1c1c6ca">
-<h3 id="org1c1c6ca">Routing</h3>
+<section id="slide-orgbc09b1a">
+<h3 id="orgbc09b1a">Routing</h3>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #204A87;">// </span><span style="color: #204A87;">routes/index.js</span>
@@ -5630,8 +5630,8 @@ app.use(<span style="color: #4E9A06;">'/somebasepath'</span>, indexRoutes);
 </pre>
 </div>
 </section>
-<section id="slide-org01ef81e">
-<h3 id="org01ef81e">Templating</h3>
+<section id="slide-org4a05bdb">
+<h3 id="org4a05bdb">Templating</h3>
 <div class="org-src-container">
 
 <pre  class="src src-handlebars"><span style="color: #A52A2A; font-weight: bold;">{{#each items}}</span>
@@ -5640,12 +5640,12 @@ app.use(<span style="color: #4E9A06;">'/somebasepath'</span>, indexRoutes);
 </pre>
 </div>
 </section>
-<section id="slide-org967a644">
-<h3 id="org967a644">Mongoose</h3>
-<div class="outline-text-3" id="text-org967a644">
+<section id="slide-org8b7cb4d">
+<h3 id="org8b7cb4d">Mongoose</h3>
+<div class="outline-text-3" id="text-org8b7cb4d">
 </div></section>
-<section id="slide-org50697c2">
-<h4 id="org50697c2">Step 1: Establish connection</h4>
+<section id="slide-orga4523a1">
+<h4 id="orga4523a1">Step 1: Establish connection</h4>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #A52A2A; font-weight: bold;">var</span> <span style="color: #0084C8; font-weight: bold;">mongoose</span> = require(<span style="color: #4E9A06;">'mongoose'</span>);
@@ -5653,8 +5653,8 @@ mongoose.connect(<span style="color: #4E9A06;">'mongodb://localhost:27017/dbname
 </pre>
 </div>
 </section>
-<section id="slide-orge29fd89">
-<h4 id="orge29fd89">Step 2: Create Model</h4>
+<section id="slide-org6097674">
+<h4 id="org6097674">Step 2: Create Model</h4>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #204A87;">// </span><span style="color: #204A87;">./models/Post.js</span>
@@ -5671,8 +5671,8 @@ module.exports = Post;
 </pre>
 </div>
 </section>
-<section id="slide-org410c78f">
-<h4 id="org410c78f">Step 3: Use Model</h4>
+<section id="slide-org0755158">
+<h4 id="org0755158">Step 3: Use Model</h4>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #A52A2A; font-weight: bold;">var</span> <span style="color: #0084C8; font-weight: bold;">Post</span> = require(<span style="color: #4E9A06;">'./models/post'</span>);
@@ -5696,13 +5696,18 @@ Post.find({title: <span style="color: #4E9A06;">"hello"</span>}, <span style="co
 </section>
 </section>
 <section>
-<section id="slide-orgf14dcc6">
-<h2 id="orgf14dcc6">Next Steps</h2>
+<section id="slide-orgc733572">
+<h2 id="orgc733572">Next Steps</h2>
 <ol>
 <li>Authentication (FB/Twitter/Google)</li>
 <li>Explore other databases (Postgres)</li>
 
 </ol>
+</section>
+</section>
+<section>
+<section id="slide-orge9eb9cc">
+<h2 id="orge9eb9cc">Goodluck for your hackathon!</h2>
 </section>
 </section>
 </div>
