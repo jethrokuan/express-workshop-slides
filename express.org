@@ -12,6 +12,7 @@
 #+REVEAL_TRANS:         fade
 #+REVEAL_SPEED:         fast
 #+REVEAL_THEME:         white
+#+REVEAL_EXTRA_CSS:     custom.css
 #+REVEAL_ROOT:          file:///home/jethro/Dropbox/org/Talks/reveal.js/
 #+REVEAL_PLUGINS: (markdown notes)
 
@@ -305,3 +306,5 @@ NOTE: If you get a =EACCES permission denied=, you'll need to prepend =sudo= in 
 1. Authentication (FB/Twitter/Google)
 2. Explore other databases (Postgres)
 * Good luck for your hackathon!
+[[file:images/hackerschoollogo.png]]
+http://school.nushackers.org/

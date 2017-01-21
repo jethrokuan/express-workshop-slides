@@ -1627,16 +1627,23 @@ body {
 
 </style>
 
+<style type="text/css">
+img {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+</style>
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Web Dev with Node.js</h1><h2 class="author">NUS Hackers</h2><p class="date">Created: 2017-01-21 Sat 09:25</p>
+<section id="sec-title-slide"><h1 class="title">Web Dev with Node.js</h1><h2 class="author">NUS Hackers</h2><p class="date">Created: 2017-01-21 Sat 09:39</p>
 </section>
 
 <section>
-<section id="slide-org6d58804">
-<h2 id="org6d58804">Hello!</h2>
+<section id="slide-orgb960166">
+<h2 id="orgb960166">Hello!</h2>
 <p>
 While waiting, please install:
 </p>
@@ -1650,8 +1657,8 @@ While waiting, please install:
 </section>
 </section>
 <section>
-<section id="slide-org13766f3">
-<h2 id="org13766f3">Prerequisites</h2>
+<section id="slide-org759bf93">
+<h2 id="org759bf93">Prerequisites</h2>
 <ol>
 <li>HTML/CSS</li>
 <li>Good to have:
@@ -1665,8 +1672,8 @@ While waiting, please install:
 </section>
 </section>
 <section>
-<section id="slide-org57a6fbd">
-<h2 id="org57a6fbd">Let's make sure everything is running</h2>
+<section id="slide-orgdb36491">
+<h2 id="orgdb36491">Let's make sure everything is running</h2>
 <div class="org-src-container">
 
 <pre  class="src src-bash">node -v <span style="color: #204A87;">#</span><span style="color: #204A87;">v7.3.0</span>
@@ -1682,14 +1689,14 @@ mongod --dbpath ~/mongo_data
 </section>
 </section>
 <section>
-<section id="slide-orge0f04e0">
-<h2 id="orge0f04e0">Javascript: A Recap</h2>
+<section id="slide-org33cd4e0">
+<h2 id="org33cd4e0">Javascript: A Recap</h2>
 <p>
 Start a node REPL in terminal via <code>node</code>.
 </p>
 </section>
-<section id="slide-org5ba92eb">
-<h3 id="org5ba92eb">Variables and Primitives</h3>
+<section id="slide-orgec00efc">
+<h3 id="orgec00efc">Variables and Primitives</h3>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #A52A2A; font-weight: bold;">var</span> <span style="color: #0084C8; font-weight: bold;">x</span> = 5;
@@ -1699,8 +1706,8 @@ Start a node REPL in terminal via <code>node</code>.
 </pre>
 </div>
 </section>
-<section id="slide-org6fae714">
-<h3 id="org6fae714">Arrays</h3>
+<section id="slide-org9c356fe">
+<h3 id="org9c356fe">Arrays</h3>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #A52A2A; font-weight: bold;">var</span> <span style="color: #0084C8; font-weight: bold;">arr</span> = [<span style="color: #4E9A06;">"a"</span>, <span style="color: #4E9A06;">"b"</span>, <span style="color: #4E9A06;">"c"</span>, <span style="color: #4E9A06;">"d"</span>];
@@ -1711,8 +1718,8 @@ Start a node REPL in terminal via <code>node</code>.
 </pre>
 </div>
 </section>
-<section id="slide-org5bcefb2">
-<h3 id="org5bcefb2">Objects</h3>
+<section id="slide-org1b2830b">
+<h3 id="org1b2830b">Objects</h3>
 <div class="org-src-container">
 
 <pre  class="src src-javascript">obj <span style="color: #A52A2A; font-weight: bold;">var</span> = {
@@ -1728,8 +1735,8 @@ obj[<span style="color: #4E9A06;">"a"</span>][<span style="color: #4E9A06;">"b"<
 </pre>
 </div>
 </section>
-<section id="slide-org396f868">
-<h3 id="org396f868">If-Else</h3>
+<section id="slide-orga30b1d8">
+<h3 id="orga30b1d8">If-Else</h3>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #A52A2A; font-weight: bold;">if</span> (1 === 2) {
@@ -1740,8 +1747,8 @@ obj[<span style="color: #4E9A06;">"a"</span>][<span style="color: #4E9A06;">"b"<
 </pre>
 </div>
 </section>
-<section id="slide-org36d854f">
-<h3 id="org36d854f">Functions</h3>
+<section id="slide-org0adbc61">
+<h3 id="org0adbc61">Functions</h3>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #A52A2A; font-weight: bold;">function</span> <span style="color: #00578E; font-weight: bold;">add</span>(<span style="color: #0084C8; font-weight: bold;">p1</span>, <span style="color: #0084C8; font-weight: bold;">p2</span>) {
@@ -1752,12 +1759,12 @@ add(1,2) <span style="color: #204A87;">//</span><span style="color: #204A87;">re
 </pre>
 </div>
 </section>
-<section id="slide-org291998d">
-<h3 id="org291998d">Javascript is Functional!</h3>
-<div class="outline-text-3" id="text-org291998d">
+<section id="slide-org4d11664">
+<h3 id="org4d11664">Javascript is Functional!</h3>
+<div class="outline-text-3" id="text-org4d11664">
 </div></section>
-<section id="slide-org5d917d2">
-<h4 id="org5d917d2">Functions as values</h4>
+<section id="slide-org7103e0b">
+<h4 id="org7103e0b">Functions as values</h4>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #A52A2A; font-weight: bold;">function</span> <span style="color: #00578E; font-weight: bold;">logit</span>() {
@@ -1768,8 +1775,8 @@ $(<span style="color: #4E9A06;">"#btn_1"</span>).click(logit);
 </pre>
 </div>
 </section>
-<section id="slide-orgf1fc490">
-<h4 id="orgf1fc490">Higher-order functions</h4>
+<section id="slide-org9ec7f27">
+<h4 id="org9ec7f27">Higher-order functions</h4>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #A52A2A; font-weight: bold;">function</span> <span style="color: #00578E; font-weight: bold;">add</span>(<span style="color: #0084C8; font-weight: bold;">p1</span>, <span style="color: #0084C8; font-weight: bold;">p2</span>) {
@@ -1790,8 +1797,8 @@ sum1(2) <span style="color: #204A87;">// </span><span style="color: #204A87;">3<
 </pre>
 </div>
 </section>
-<section id="slide-orgc931f6c">
-<h4 id="orgc931f6c">Callback functions</h4>
+<section id="slide-org7b17850">
+<h4 id="org7b17850">Callback functions</h4>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #A52A2A; font-weight: bold;">function</span> <span style="color: #00578E; font-weight: bold;">logResult</span>(<span style="color: #0084C8; font-weight: bold;">result</span>) {
@@ -1807,12 +1814,12 @@ sum1(2) <span style="color: #204A87;">// </span><span style="color: #204A87;">3<
 </section>
 </section>
 <section>
-<section id="slide-orgf1227b9">
-<h2 id="orgf1227b9">An Introduction to Node.js</h2>
-<div class="outline-text-2" id="text-orgf1227b9">
+<section id="slide-org28fcea2">
+<h2 id="org28fcea2">An Introduction to Node.js</h2>
+<div class="outline-text-2" id="text-org28fcea2">
 </div></section>
-<section id="slide-org1ad45ea">
-<h3 id="org1ad45ea">Node.js is Javascript on the Server</h3>
+<section id="slide-orgc90aa11">
+<h3 id="orgc90aa11">Node.js is Javascript on the Server</h3>
 <ul>
 <li>Runs on the V8 engine</li>
 <li>Unlike browser Javascript (client)
@@ -1825,8 +1832,8 @@ sum1(2) <span style="color: #204A87;">// </span><span style="color: #204A87;">3<
 
 </ul>
 </section>
-<section id="slide-org3017295">
-<h4 id="org3017295">Understanding Node.js</h4>
+<section id="slide-org3fb964d">
+<h4 id="org3fb964d">Understanding Node.js</h4>
 
 <div class="figure">
 <p><img src="data:image/jpg;base64,/9j/4Q/MRXhpZgAATU0AKgAAAAgABwESAAMAAAABAAEAAAEaAAUAAAABAAAAYgEbAAUAAAABAAAA
@@ -4211,8 +4218,8 @@ V4K8FeCvBUrT2/8A/9k=" width="50%" height="50%" />
 </p>
 </div>
 </section>
-<section id="slide-orgdfcdd9a">
-<h4 id="orgdfcdd9a">Hackathons ♥ Node</h4>
+<section id="slide-org163faa4">
+<h4 id="org163faa4">Hackathons ♥ Node</h4>
 <ul>
 <li>Huge ecosystem (too huge?)
 <ul>
@@ -4225,16 +4232,16 @@ V4K8FeCvBUrT2/8A/9k=" width="50%" height="50%" />
 
 </ul>
 </section>
-<section id="slide-org2566495">
-<h4 id="org2566495">Hackathon Starter Kits are a thing</h4>
+<section id="slide-org9bc9f15">
+<h4 id="org9bc9f15">Hackathon Starter Kits are a thing</h4>
 <ul>
 <li><a href="https://github.com/sahat/hackathon-starter">https://github.com/sahat/hackathon-starter</a></li>
 <li>has a great README which might be useful, go check it out!</li>
 
 </ul>
 </section>
-<section id="slide-org7ae2d31">
-<h4 id="org7ae2d31">But they're so complex!</h4>
+<section id="slide-org36b6b71">
+<h4 id="org36b6b71">But they're so complex!</h4>
 <ul>
 <li>Routing?</li>
 <li>Templating?</li>
@@ -4244,8 +4251,8 @@ V4K8FeCvBUrT2/8A/9k=" width="50%" height="50%" />
 
 </ul>
 </section>
-<section id="slide-orgdd652b7">
-<h4 id="orgdd652b7">Back to basics for us&#x2026;</h4>
+<section id="slide-orgb06ddc6">
+<h4 id="orgb06ddc6">Back to basics for us&#x2026;</h4>
 <ul>
 <li>To facilitate learning only</li>
 <li>Gradual introduction of libraries</li>
@@ -4255,8 +4262,8 @@ V4K8FeCvBUrT2/8A/9k=" width="50%" height="50%" />
 </section>
 </section>
 <section>
-<section id="slide-org5423600">
-<h2 id="org5423600">HTTP</h2>
+<section id="slide-org307f29a">
+<h2 id="org307f29a">HTTP</h2>
 
 <div class="figure">
 <p><img src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYF
@@ -5487,8 +5494,8 @@ h3ztm8P6FvRodeKNAAD/ANGn/9k=" width="50%" height="50%" />
 </section>
 </section>
 <section>
-<section id="slide-orgcdce1b2">
-<h2 id="orgcdce1b2">CRUD</h2>
+<section id="slide-orgecf44b2">
+<h2 id="orgecf44b2">CRUD</h2>
 <ol>
 <li>Create (POST) - Make something</li>
 <li>Read (GET) - Get something</li>
@@ -5499,8 +5506,8 @@ h3ztm8P6FvRodeKNAAD/ANGn/9k=" width="50%" height="50%" />
 </section>
 </section>
 <section>
-<section id="slide-org269e797">
-<h2 id="org269e797">Building a blog app!</h2>
+<section id="slide-orgd242404">
+<h2 id="orgd242404">Building a blog app!</h2>
 <p>
 Whiteboard time!
 </p>
@@ -5512,16 +5519,16 @@ Completed app located at <a href="https://github.com/jethrokuan/express-workshop
 </section>
 </section>
 <section>
-<section id="slide-org1a78cfc">
-<h2 id="org1a78cfc">Creating your Express App</h2>
-<div class="outline-text-2" id="text-org1a78cfc">
+<section id="slide-org7995326">
+<h2 id="org7995326">Creating your Express App</h2>
+<div class="outline-text-2" id="text-org7995326">
 </div></section>
-<section id="slide-org34491d7">
-<h3 id="org34491d7">Generating the app</h3>
-<div class="outline-text-3" id="text-org34491d7">
+<section id="slide-orgffb6c6f">
+<h3 id="orgffb6c6f">Generating the app</h3>
+<div class="outline-text-3" id="text-orgffb6c6f">
 </div></section>
-<section id="slide-orgd26df30">
-<h4 id="orgd26df30">Step 1: Install <code>express-generator</code></h4>
+<section id="slide-org381ee36">
+<h4 id="org381ee36">Step 1: Install <code>express-generator</code></h4>
 <div class="org-src-container">
 
 <pre  class="src src-bash">npm install express-generator -g
@@ -5532,16 +5539,16 @@ Completed app located at <a href="https://github.com/jethrokuan/express-workshop
 NOTE: If you get a <code>EACCES permission denied</code>, you'll need to prepend <code>sudo</code> in front of the command.
 </p>
 </section>
-<section id="slide-org421401c">
-<h4 id="org421401c">Step 2: create a new folder</h4>
+<section id="slide-org91ca49e">
+<h4 id="org91ca49e">Step 2: create a new folder</h4>
 <div class="org-src-container">
 
 <pre  class="src src-bash">mkdir hnr-blog
 </pre>
 </div>
 </section>
-<section id="slide-orgec7efdc">
-<h4 id="orgec7efdc">Step 3: Generate express app!</h4>
+<section id="slide-org9f59899">
+<h4 id="org9f59899">Step 3: Generate express app!</h4>
 <div class="org-src-container">
 
 <pre  class="src src-bash"><span style="color: #A020F0;">cd</span> hnr-blog
@@ -5549,8 +5556,8 @@ express --view=hbs . <span style="color: #204A87;">#</span><span style="color: #
 </pre>
 </div>
 </section>
-<section id="slide-orgd0c9c8f">
-<h3 id="orgd0c9c8f">Folder Structure</h3>
+<section id="slide-org36f1dac">
+<h3 id="org36f1dac">Folder Structure</h3>
 <div class="org-src-container">
 
 <pre  class="src src-text">.
@@ -5565,12 +5572,12 @@ express --view=hbs . <span style="color: #204A87;">#</span><span style="color: #
 </section>
 </section>
 <section>
-<section id="slide-org1ab30c6">
-<h2 id="org1ab30c6">Recap</h2>
-<div class="outline-text-2" id="text-org1ab30c6">
+<section id="slide-org3fa906a">
+<h2 id="org3fa906a">Recap</h2>
+<div class="outline-text-2" id="text-org3fa906a">
 </div></section>
-<section id="slide-orge6e1127">
-<h3 id="orge6e1127"><code>package.json</code></h3>
+<section id="slide-org8fe13b9">
+<h3 id="org8fe13b9"><code>package.json</code></h3>
 <ol>
 <li>Defines your project
 <ul>
@@ -5590,8 +5597,8 @@ express --view=hbs . <span style="color: #204A87;">#</span><span style="color: #
 </pre>
 </div>
 </section>
-<section id="slide-org63b66cc">
-<h3 id="org63b66cc">Basic Express App</h3>
+<section id="slide-orgaedeaae">
+<h3 id="orgaedeaae">Basic Express App</h3>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #204A87;">// </span><span style="color: #204A87;">index.js</span>
@@ -5609,8 +5616,8 @@ app.listen(3000, <span style="color: #A52A2A; font-weight: bold;">function</span
 </pre>
 </div>
 </section>
-<section id="slide-org5487d4f">
-<h3 id="org5487d4f">HTTP Verbs</h3>
+<section id="slide-orgec21dfd">
+<h3 id="orgec21dfd">HTTP Verbs</h3>
 <div class="org-src-container">
 
 <pre  class="src src-javascript">app.get(<span style="color: #4E9A06;">'/'</span>, <span style="color: #A52A2A; font-weight: bold;">function</span>(<span style="color: #0084C8; font-weight: bold;">req</span>, <span style="color: #0084C8; font-weight: bold;">res</span>) {...})
@@ -5621,8 +5628,8 @@ app.post(<span style="color: #4E9A06;">'/'</span>, <span style="color: #A52A2A; 
 </pre>
 </div>
 </section>
-<section id="slide-orga94878f">
-<h3 id="orga94878f">Routing</h3>
+<section id="slide-orgcdb9462">
+<h3 id="orgcdb9462">Routing</h3>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #204A87;">// </span><span style="color: #204A87;">routes/index.js</span>
@@ -5650,8 +5657,8 @@ app.use(<span style="color: #4E9A06;">'/somebasepath'</span>, indexRoutes);
 </pre>
 </div>
 </section>
-<section id="slide-orged98b22">
-<h3 id="orged98b22">Templating</h3>
+<section id="slide-org24270f3">
+<h3 id="org24270f3">Templating</h3>
 <div class="org-src-container">
 
 <pre  class="src src-handlebars"><span style="color: #A52A2A; font-weight: bold;">{{#each items}}</span>
@@ -5666,12 +5673,12 @@ app.use(<span style="color: #4E9A06;">'/somebasepath'</span>, indexRoutes);
 </pre>
 </div>
 </section>
-<section id="slide-org6a13857">
-<h3 id="org6a13857">Mongoose</h3>
-<div class="outline-text-3" id="text-org6a13857">
+<section id="slide-org64b70cb">
+<h3 id="org64b70cb">Mongoose</h3>
+<div class="outline-text-3" id="text-org64b70cb">
 </div></section>
-<section id="slide-org2938495">
-<h4 id="org2938495">Step 1: Establish connection</h4>
+<section id="slide-org614ec95">
+<h4 id="org614ec95">Step 1: Establish connection</h4>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #A52A2A; font-weight: bold;">var</span> <span style="color: #0084C8; font-weight: bold;">mongoose</span> = require(<span style="color: #4E9A06;">'mongoose'</span>);
@@ -5679,8 +5686,8 @@ mongoose.connect(<span style="color: #4E9A06;">'mongodb://localhost:27017/dbname
 </pre>
 </div>
 </section>
-<section id="slide-orge77f321">
-<h4 id="orge77f321">Step 2: Create Model</h4>
+<section id="slide-org65593af">
+<h4 id="org65593af">Step 2: Create Model</h4>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #204A87;">// </span><span style="color: #204A87;">./models/Post.js</span>
@@ -5697,8 +5704,8 @@ module.exports = Post;
 </pre>
 </div>
 </section>
-<section id="slide-orgb386d64">
-<h4 id="orgb386d64">Step 3: Use Model</h4>
+<section id="slide-orgc805872">
+<h4 id="orgc805872">Step 3: Use Model</h4>
 <div class="org-src-container">
 
 <pre  class="src src-javascript"><span style="color: #A52A2A; font-weight: bold;">var</span> <span style="color: #0084C8; font-weight: bold;">Post</span> = require(<span style="color: #4E9A06;">'./models/post'</span>);
@@ -5722,8 +5729,8 @@ Post.find({title: <span style="color: #4E9A06;">"hello"</span>}, <span style="co
 </section>
 </section>
 <section>
-<section id="slide-org233058c">
-<h2 id="org233058c">Next Steps</h2>
+<section id="slide-org2b9ce22">
+<h2 id="org2b9ce22">Next Steps</h2>
 <ol>
 <li>Authentication (FB/Twitter/Google)</li>
 <li>Explore other databases (Postgres)</li>
@@ -5732,8 +5739,222 @@ Post.find({title: <span style="color: #4E9A06;">"hello"</span>}, <span style="co
 </section>
 </section>
 <section>
-<section id="slide-orgfcbeac6">
-<h2 id="orgfcbeac6">Good luck for your hackathon!</h2>
+<section id="slide-orgd3deedb">
+<h2 id="orgd3deedb">Good luck for your hackathon!</h2>
+<p>
+<img src="data:image/png;base64,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
+RU5ErkJggg==" />
+<a href="http://school.nushackers.org/">http://school.nushackers.org/</a>
+</p>
 </section>
 </section>
 </div>
