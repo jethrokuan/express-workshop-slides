@@ -153,6 +153,11 @@ Start a node REPL in terminal via =node=.
 * HTTP
 #+ATTR_HTML: :width 50% :height 50%
 [[file:images/http.jpg]]
+* CRUD
+1. Create (POST) - Make something
+2. Read (GET) - Get something
+3. Update (PUT) - Change something
+4. Delete (DELETE) - Remove something
 * Building a blog app!
 Whiteboard time!
 
@@ -229,6 +234,14 @@ NOTE: If you get a =EACCES permission denied=, you'll need to prepend =sudo= in 
     res.send("something");
   })
 
+  router.get('/:postid', function(req, res) {
+    // req.params.postid
+  })
+
+  router.post('/', function(req, res) {
+    // req.body (courtesy of bodyParser)
+  })
+
   module.exports = router;
 
 
@@ -242,6 +255,12 @@ NOTE: If you get a =EACCES permission denied=, you'll need to prepend =sudo= in 
   {{#each items}}
     <li>{{itemproperty}}</li>
   {{/each}}
+
+  {{#if <something true here>}}
+    this will appear.
+  {{else}}
+    this won't.
+  {{/if}}
 #+END_SRC
 ** Mongoose
 *** Step 1: Establish connection
@@ -285,4 +304,4 @@ NOTE: If you get a =EACCES permission denied=, you'll need to prepend =sudo= in 
 * Next Steps
 1. Authentication (FB/Twitter/Google)
 2. Explore other databases (Postgres)
-* Goodluck for your hackathon!
+* Good luck for your hackathon!
